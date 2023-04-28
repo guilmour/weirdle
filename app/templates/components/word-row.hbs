@@ -1,0 +1,9 @@
+<div class="word-row">
+  {{#each this.typedLettersArray as |letter index|}}
+    <LetterBox
+      @letter={{letter}}
+      @dayWord={{this.dayWord}}
+      @index={{index}}
+    />
+  {{/each}}
+</div>

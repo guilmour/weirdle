@@ -1,0 +1,39 @@
+<div class="main-area">
+  <div class="title">
+    <h1>weirdle. 🧑‍🎤</h1>
+    <h6>just another wordle game.</h6>
+  </div>
+
+
+  <div class="game">
+    {{#each this.triesCount as |try index|}}
+      {{#if (lte index 5)}}
+        <WordRow
+          @dayWord={{this.dayWord}}
+          @inputWord={{this.inputWord}}
+          @isGameFinished={{this.isGameFinished}}
+          @notEnoughLetters={{this.notEnoughLetters}}
+        />
+      {{/if}}
+    {{/each}}
+  </div>
+
+  {{#if this.isGameFinishedRight}}
+    <h3>Congratulations, you got the word right! 🥳 </h3>
+  {{/if}}
+
+  {{#if this.isGameFinishedWrong}}
+    <h3>Oops, it seems you do not got the right word! 😢 </h3>
+  {{/if}}
+
+  <div class="notifications">
+    {{this.notificationMessage}}
+  </div>
+
+
+  <div class="footer">
+    <small>
+      by guilmour
+    </small>
+  </div>
+</div>
